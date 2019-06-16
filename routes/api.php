@@ -28,3 +28,5 @@ Route::post('/delete-voucher','VoucherManagementSystem@deleteVoucher')->middlewa
 Route::post('/get-voucher-details','VoucherManagementSystem@getVoucherDetails')->middleware('authenticate_request');
 Route::post('/get-company-products','VoucherManagementSystem@getCompanyProducts')->middleware('authenticate_request');
 Route::post('/submit-voucher-details','VoucherManagementSystem@SubmitVoucherDetails')->middleware('authenticate_request');
+Route::post('/upload-vouchers','VoucherManagementSystem@UploadVoucherList')->middleware('authenticate_request');
+Route::post('/add-new-product','VoucherManagementSystem@AddProductDetails')->middleware('authenticate_request');

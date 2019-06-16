@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9088cd44-48bc-47d3-ac9f-01e4e5013278" name="Default" comment="" />
+    <list default="true" id="9088cd44-48bc-47d3-ac9f-01e4e5013278" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Customers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,15 +32,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Customers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Customers.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="162" column="53" lean-forward="true" selection-start-line="162" selection-start-column="53" selection-end-line="162" selection-end-column="53" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="465">
+              <caret line="31" column="112" lean-forward="true" selection-start-line="31" selection-start-column="112" selection-end-line="31" selection-end-column="112" />
             </state>
           </provider>
         </entry>
@@ -43,32 +45,20 @@
       <file leaf-file-name="VoucherManagementSystem.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="309">
+              <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../HCDE/admin/pdfmaster/index.php">
+      <file leaf-file-name="Customers.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Customers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="59" column="42" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="36" />
+            <state relative-caret-position="2589">
+              <caret line="217" column="88" selection-start-line="217" selection-start-column="88" selection-end-line="217" selection-end-column="88" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="e#23#62#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="php.ini" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../php/php.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-379">
-              <caret line="862" column="14" selection-start-line="862" selection-start-column="4" selection-end-line="862" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -77,36 +67,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>upload</find>
-      <find>modal</find>
-      <find>scroll</find>
-      <find>dashboard</find>
-      <find>download_button</find>
-      <find>badge_list_pdf</find>
-      <find>INSERT INTO Enrollments SET Key='</find>
-      <find>]</find>
-      <find>',</find>
-      <find>',Name='</find>
-      <find>',Location='</find>
-      <find>',Email='</find>
-      <find>';</find>
-      <find>'Email</find>
-      <find>Name=</find>
-      <find>Location=</find>
-      <find>Email=</find>
-      <find>Key</find>
-      <find>INSERT INTO Enrollments SET</find>
-      <find>insert nto</find>
-      <find>last_insert_id</find>
-      <find>insert_id</find>
-      <find>Upload</find>
-      <find>UPDATE</find>
-      <find>txt</find>
-      <find>bade_</find>
-      <find>Audit</find>
-      <find>imagick</find>
       <find>imag</find>
       <find>extension</find>
+      <find>extension=</find>
+      <find>Audit?</find>
+      <find>Report_Form_ID</find>
+      <find>imagick</find>
+      <find>getApprovalReport</find>
+      <find>getFormApplication</find>
+      <find>ConvertSize</find>
+      <find>Independent Estimation</find>
+      <find>Independent Estimate Determination</find>
+      <find>Audit</find>
+      <find>Approc</find>
+      <find>Form_pdf</find>
+      <find>sig</find>
+      <find>signature_text</find>
+      <find>Please ch</find>
+      <find>Add_Estimate_Determination</find>
+      <find>signature_image</find>
+      <find>img</find>
+      <find>jpeg</find>
+      <find>signature</find>
+      <find>Learn</find>
+      <find>cycle-carousel</find>
+      <find>carousel</find>
+      <find>getUserVoucherTable</find>
+      <find>not re</find>
+      <find>last</find>
+      <find>inser</find>
+      <find>$voucher_id</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -120,18 +110,12 @@
       <replace>Keyv</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../sugar-packed/wp-config.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Http/helpers.php" />
-        <option value="$PROJECT_DIR$/../immunizesa/index.php" />
-        <option value="$PROJECT_DIR$/../immunizesa/test.php" />
-        <option value="$PROJECT_DIR$/../hiv210/submit-module.php" />
-        <option value="$PROJECT_DIR$/../stars-app/edit-profile.php" />
-        <option value="$PROJECT_DIR$/../stars-app/StarsAppProfileManager.php" />
-        <option value="$PROJECT_DIR$/../stars-app/AdminManagerModel.php" />
         <option value="$PROJECT_DIR$/../stars-app/vehicle-mileage-report.php" />
         <option value="$PROJECT_DIR$/bootstrap/app.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
@@ -146,7 +130,6 @@
         <option value="$PROJECT_DIR$/../stars-app/resources/views/profile/add/pre-trip-survey.php" />
         <option value="$PROJECT_DIR$/../stars-app/app/Http/Controllers/StarsAppProfileManager.php" />
         <option value="$PROJECT_DIR$/../stars-app/app/AdminManagerModel.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/../cnsw/includes/config.php" />
         <option value="$PROJECT_DIR$/../cnsw/includes/global.php" />
         <option value="$USER_HOME$/Desktop/data.txt" />
@@ -167,13 +150,23 @@
         <option value="$PROJECT_DIR$/../cnsw/admin/ajax.php" />
         <option value="$PROJECT_DIR$/../cnsw/admin/reports.php" />
         <option value="$PROJECT_DIR$/../cnsw/admin/inc/reg.class.php" />
-        <option value="$PROJECT_DIR$/app/Customers.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/index.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/phpinfo.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/index 2.php" />
         <option value="$PROJECT_DIR$/../HCDE/config/db_config.php" />
+        <option value="$PROJECT_DIR$/../HCDE/report.php" />
+        <option value="$PROJECT_DIR$/../HCDE/admin/pdfmaster/mpdf/mpdf.php" />
+        <option value="$PROJECT_DIR$/../HCDE/signature-pad/signatureBasic.html" />
+        <option value="$PROJECT_DIR$/../HCDE/admin/pdf_Forms/Determination_of_Cost_Form.php" />
         <option value="$PROJECT_DIR$/../HCDE/admin/inc/AuditForms.class.php" />
         <option value="$PROJECT_DIR$/../HCDE/admin/pdfmaster/index.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/phpinfo.php" />
+        <option value="$PROJECT_DIR$/../HCDE/inc/form.class.php" />
+        <option value="$PROJECT_DIR$/../HCDE/independent-estimate-determination.php" />
+        <option value="$PROJECT_DIR$/../HCDE/admin/pdf_Forms/Estimate_Determination_Form.php" />
+        <option value="$PROJECT_DIR$/../hiv210/wp-content/themes/hiv210-theme/page-home.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Customers.php" />
       </list>
     </option>
   </component>
@@ -287,17 +280,19 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,27 +308,18 @@
             <path>
               <item name="VoucherManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="VoucherManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VoucherManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VoucherManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vanguard/vri" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -369,38 +355,64 @@
       <workItem from="1553642145166" duration="5967000" />
       <workItem from="1554021736005" duration="10874000" />
       <workItem from="1555028139342" duration="64189000" />
-      <workItem from="1556709383125" duration="8265000" />
+      <workItem from="1556709383125" duration="27544000" />
+      <workItem from="1557002810112" duration="10767000" />
+      <workItem from="1557506769002" duration="731000" />
+      <workItem from="1559479797252" duration="17494000" />
+      <workItem from="1560686008873" duration="3801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132887000" />
+    <option name="totallyTimeSpent" value="184959000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info id="npm" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3005698" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1624161" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" sideWeight="0.497151" weight="0.3295302" />
       <window_info anchor="right" id="Structure" order="4" sideWeight="0.502849" side_tool="true" weight="0.3295302" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32905984" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
+      <window_info anchor="right" id="Structure" order="4" sideWeight="0.502849" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32905984" />
+      <window_info anchor="right" id="Database" order="0" sideWeight="0.497151" weight="0.3295302" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3005698" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -409,83 +421,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../startran/wp-config_old.php">
+    <entry file="file://$PROJECT_DIR$/app/Customers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../startran/wp-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../startran/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/app/AdminManagerModel.php.bak">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/resources/views/profile/add/pre-trip-survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="68" column="4" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/app/AdminManagerModel.php-old">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="1531" column="43" selection-start-line="1531" selection-start-column="26" selection-end-line="1531" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ARNOTH/admin/inc/reg.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/app/AdminManagerModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="1572" selection-start-line="1572" selection-end-line="1572" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/app/Http/Controllers/StarsAppProfileManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="553" column="54" lean-forward="true" selection-start-line="553" selection-start-column="54" selection-end-line="553" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stars-app/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="146" column="131" selection-start-line="146" selection-start-column="115" selection-end-line="146" selection-end-column="131" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ARNOTH/includes/global.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+        <state relative-caret-position="1440">
+          <caret line="99" column="37" lean-forward="true" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -500,13 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="12" column="46" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -575,13 +510,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Things to do.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Things to do.txt" />
     <entry file="file://$PROJECT_DIR$/../cnsw/admin/inc/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -664,43 +593,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Customers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="162" column="53" lean-forward="true" selection-start-line="162" selection-start-column="53" selection-end-line="162" selection-end-column="53" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../HCDE/ajax.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../HCDE/config/db_config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/index.php" />
     <entry file="file://$PROJECT_DIR$/../HCDE/admin/Estimate_Determination.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -708,41 +601,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../HCDE/admin/inc/AuditForms.class.php">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/phpinfo.php" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/index 2.php" />
+    <entry file="file://$PROJECT_DIR$/../../php/php.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-379">
+          <caret line="862" column="14" selection-start-line="862" selection-start-column="4" selection-end-line="862" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/test.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/phpinfo.php">
+    <entry file="file://$PROJECT_DIR$/../HCDE/inc/globals.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/config/db_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/admin/reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="64" column="39" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/index 3.php" />
+    <entry file="file://$PROJECT_DIR$/../HCDE/admin/pdfmaster/mpdf/mpdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3764">
+          <caret line="32503" column="20" selection-start-line="32503" selection-start-column="20" selection-end-line="32503" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/signature-pad/signatureBasic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="98" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/admin/pdf_Forms/Determination_of_Cost_Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="2476" column="52" selection-start-line="2476" selection-start-column="52" selection-end-line="2476" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/admin/inc/AuditForms.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="253" column="51" selection-start-line="253" selection-start-column="51" selection-end-line="253" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/inc/form.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1812">
+          <caret line="158" column="94" lean-forward="true" selection-start-line="158" selection-start-column="94" selection-end-line="158" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/independent-estimate-determination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="553" column="53" selection-start-line="553" selection-start-column="53" selection-end-line="553" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../HCDE/admin/pdf_Forms/Estimate_Determination_Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="2641" column="33" selection-start-line="2641" selection-start-column="33" selection-end-line="2641" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../HCDE/admin/pdfmaster/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="59" column="42" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="249">
+          <caret line="18" column="29" selection-start-line="2" selection-start-column="2" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../php/php.ini">
+    <entry file="file://$PROJECT_DIR$/../hiv210/wp-content/themes/hiv210-theme/page-home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <caret line="862" column="14" selection-start-line="862" selection-start-column="4" selection-end-line="862" selection-end-column="14" />
+        <state relative-caret-position="15">
+          <caret line="46" column="110" selection-start-line="46" selection-start-column="110" selection-end-line="46" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/filesystems.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-471" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="112" lean-forward="true" selection-start-line="31" selection-start-column="112" selection-end-line="31" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2589">
+          <caret line="217" column="88" selection-start-line="217" selection-start-column="88" selection-end-line="217" selection-end-column="88" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

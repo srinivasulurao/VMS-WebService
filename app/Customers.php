@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Customers extends Model
 {
@@ -99,7 +100,7 @@ class Customers extends Model
             $now=date("Y-m-d h:i:s");
             DB::table($voucher_table)->where('voucher_id',$voucher_id)->update(array('redemption_status'=>$redemption_status,'redeemed_on'=>$now));
             $vouchers=DB::table($voucher_table)->get();
-            $ed=($redemption_status==1)?"Redeemed":"Not Redeemed";
+            $ed=($redemption_status==1)?"Redeemed":"Un-Redeemed";
             return self::responseObject(200,"Voucher id {$voucher_id} $ed Successfully !", $vouchers);
         }
         else{
@@ -156,11 +157,13 @@ class Customers extends Model
         $update_data=array();
         $update_data['redemption_status']=$request->get('redemption_status');
         $update_data['validity']=$request->get('voucher_validity');
-        $update_data['product_linked']=$request->get('product_linked');
+        if($request->get('product_linked'))
+           $update_data['product_linked']=$request->get('product_linked');
         $update_data['enabled']=$request->get('enabled');
         $update_data['created_on']=$request->get('created_on');
         $update_data['redeemed_on']=$request->get('redeemed_on');
-        $update_data['notes']=$request->get('notes');
+        if($request->get('notes'))
+           $update_data['notes']=$request->get('notes');
 
         if($user_id){
             $voucher_table=self::getUserVoucherTable($user_id);
@@ -170,6 +173,115 @@ class Customers extends Model
         }
         else{
             return self::responseObject(300,"Important Parameters are missing !",null);
+        }
+    }
+
+    protected static function getLinkedProductId($product_name,$user_id)
+    {
+        $product_obj=DB::table('products')->where('user_id',$user_id)->where('product_name',$product_name);
+        if($product_obj->count()){
+            $pid=$product_obj->first()->product_id;
+            return $pid;
+        }
+        return null;
+    }
+
+    protected static function getVoucherRemainingCount($user_id){
+         $plan=self::getUserPlan($user_id);
+         $voucher_table=self::getUserVoucherTable($user_id);
+         $total_vouchers=DB::table($voucher_table)->count();
+         $remaining_quota=$plan->coupon_limit-$total_vouchers;
+         return $remaining_quota;
+    }
+
+    /*
+     * Get Customer Plan limits
+    */
+
+    protected static function getUserPlan($user_id){
+        $user=DB::table('users')->where('user_id',$user_id)->first();
+        $plan=DB::table('plans')->where('plan_id',$user->opted_plan)->first();
+        return $plan;
+    }
+
+    protected static  function addProduct($request){
+        try{
+            $insert=array();
+            $insert['user_id']=$request->get('user_id');
+            $insert['product_name']=$request->get('product_name');
+            $insert['specification']=$request->get('specification');
+            $insert['specification_options']=$request->get('specification_options');
+            $insert['price']=$request->get('price');
+            $insert['quantity']=$request->get('quantity');
+            DB::table('products')->insert($insert);
+
+            return self::responseObject(200,"New Product Added Successfully !",array());
+        }
+        catch (\Exception $e){
+            return self::responseObject(300,$e->getMessage(),array());
+        }
+    }
+
+    /*
+     * Here, we will first check the CSV format is correct or not !
+     * Secondly, we will skip the first row while processing the rows.
+     * Finally, will check the how many vouchers can the user upload, based on that we will process the rows.
+     *
+     */
+    protected static function processVoucherCSVFile($request){
+        try {
+            $file = $request->file('voucher_csv');
+            $user_id = $request->get('user_id');
+            $voucher_table = self::getUserVoucherTable($user_id);
+            $remaining_count = self::getVoucherRemainingCount($user_id);
+            $file_name = time() . "_" . str_replace(" ", "_", $file->getClientOriginalName());
+            $destination_path = storage_path('voucher_csv_files');
+            $file->move($destination_path, $file_name);
+            $csv_file = $destination_path . "/" . $file_name;
+            $fp = fopen($csv_file, "r");
+            $count = 0;
+            $row = 0;
+
+            $error = "";
+            while ($handle = fgetcsv($fp, 1000, ",")) {
+                $count++;
+                if (sizeof($handle) != 4) {
+                    $error = "Format Not Supported in Row $count !";
+                    break;
+                } else if ($count == 1) { //Skip the first row.
+                    continue;
+                } else {
+                    if ($row > $remaining_count) {   //Customer is not allowed to add more than his quota.
+                        $error .= "Processed, $count coupons, Your coupon quota is full !";
+                        break;
+                    }
+                    $validity = date("Y-m-d", strtotime($handle[1]));
+                    $today = date("Y-m-d", time());
+                    $product_linked = self::getLinkedProductId($handle[2], $user_id);
+                    $insert = array();
+                    $insert['coupon_code'] = $handle[0];
+                    $insert['redemption_status'] = 0;
+                    $insert['enabled'] = 1;
+                    $insert['validity'] = $validity;
+                    $insert['created_on'] = $today;
+                    $insert['product_linked'] = self::getLinkedProductId($handle[2], $user_id);
+                    $insert['notes'] = $handle[3];
+
+                    DB::table($voucher_table)->insert($insert);
+                    $row++;
+                }
+            }
+
+            $vouchers = self::getUserVouchersList($user_id);
+
+            if ($error) {
+                return self::responseObject(201, $error, $vouchers);
+            } else {
+                return self::responseObject(200, "Vouchers Uploaded Successfully !");
+            }
+        }
+        catch(\Exception $e){
+            return self::responseObject(500, explode("(",$e->getMessage())[0],$e->getLine());
         }
     }
 

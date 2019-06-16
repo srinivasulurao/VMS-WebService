@@ -72,4 +72,12 @@ class VoucherManagementSystem extends Controller
         return $result=Customers::editVoucherDetails($request);
     }
 
+    public function UploadVoucherList(Request $request){
+        return $result=Customers::processVoucherCSVFile($request);
+    }
+
+    public function AddProductDetails(Request $request){
+        return $result=Customers::addProduct($request);
+    }
+
 }
