@@ -36,8 +36,8 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="112" lean-forward="true" selection-start-line="31" selection-start-column="112" selection-end-line="31" selection-end-column="112" />
+            <state relative-caret-position="495">
+              <caret line="33" column="122" selection-start-line="33" selection-start-column="122" selection-end-line="33" selection-end-column="122" />
             </state>
           </provider>
         </entry>
@@ -45,8 +45,8 @@
       <file leaf-file-name="VoucherManagementSystem.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="42" />
+            <state relative-caret-position="504">
+              <caret line="87" column="52" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -54,8 +54,8 @@
       <file leaf-file-name="Customers.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Customers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2589">
-              <caret line="217" column="88" selection-start-line="217" selection-start-column="88" selection-end-line="217" selection-end-column="88" />
+            <state relative-caret-position="294">
+              <caret line="220" column="60" selection-start-line="220" selection-start-column="60" selection-end-line="220" selection-end-column="60" />
               <folding>
                 <element signature="e#23#62#0#PHP" expanded="true" />
               </folding>
@@ -67,10 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>imag</find>
-      <find>extension</find>
-      <find>extension=</find>
-      <find>Audit?</find>
       <find>Report_Form_ID</find>
       <find>imagick</find>
       <find>getApprovalReport</find>
@@ -92,11 +88,15 @@
       <find>Learn</find>
       <find>cycle-carousel</find>
       <find>carousel</find>
-      <find>getUserVoucherTable</find>
       <find>not re</find>
       <find>last</find>
       <find>inser</find>
       <find>$voucher_id</find>
+      <find>getUserVoucherTable</find>
+      <find>editProductDetails</find>
+      <find>ad</find>
+      <find>add</find>
+      <find>addP</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -116,8 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../stars-app/vehicle-mileage-report.php" />
-        <option value="$PROJECT_DIR$/bootstrap/app.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/../sugar-packed/sugar-packed.com/var/www/vhosts/sugar-packed.com/wp-content/themes/wp-theme-html5-boilerplate-master/header.php" />
         <option value="$PROJECT_DIR$/../OracleTimeSheet/app/Http/Middleware/EmployeeAuthenticator.php" />
@@ -165,6 +163,8 @@
         <option value="$PROJECT_DIR$/../HCDE/admin/pdf_Forms/Estimate_Determination_Form.php" />
         <option value="$PROJECT_DIR$/../hiv210/wp-content/themes/hiv210-theme/page-home.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php" />
+        <option value="$PROJECT_DIR$/../assam-usp/core/lib/Drupal/Component/Plugin/Discovery/DiscoveryCachedTrait.php" />
+        <option value="$PROJECT_DIR$/../assam-usp/core/lib/Drupal/Component/Plugin/Discovery/DiscoveryTrait.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Customers.php" />
       </list>
@@ -319,7 +319,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vanguard/vri" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../assam-usp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -359,12 +359,14 @@
       <workItem from="1557002810112" duration="10767000" />
       <workItem from="1557506769002" duration="731000" />
       <workItem from="1559479797252" duration="17494000" />
-      <workItem from="1560686008873" duration="3801000" />
+      <workItem from="1560686008873" duration="3965000" />
+      <workItem from="1561891044612" duration="9676000" />
+      <workItem from="1563143528044" duration="3428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184959000" />
+    <option name="totallyTimeSpent" value="198227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -377,7 +379,7 @@
       <window_info id="npm" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3005698" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1624161" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16644295" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" sideWeight="0.497151" weight="0.3295302" />
       <window_info anchor="right" id="Structure" order="4" sideWeight="0.502849" side_tool="true" weight="0.3295302" />
@@ -395,14 +397,14 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
       <window_info anchor="right" id="Structure" order="4" sideWeight="0.502849" side_tool="true" weight="0.3295302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32905984" />
       <window_info anchor="right" id="Database" order="0" sideWeight="0.497151" weight="0.3295302" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3005698" />
@@ -421,34 +423,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Customers.php">
+    <entry file="file://$PROJECT_DIR$/../assam-usp/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="99" column="37" lean-forward="true" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AuthenticateUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ARNOTH/includes/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cnsw/admin/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="390">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -712,24 +690,45 @@
         <state relative-caret-position="-471" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../assam-usp/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../assam-usp/core/lib/Drupal/Component/Plugin/Discovery/DiscoveryTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../assam-usp/core/lib/Drupal/Component/Plugin/Discovery/DiscoveryCachedTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="112" lean-forward="true" selection-start-line="31" selection-start-column="112" selection-end-line="31" selection-end-column="112" />
+        <state relative-caret-position="495">
+          <caret line="33" column="122" selection-start-line="33" selection-start-column="122" selection-end-line="33" selection-end-column="122" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VoucherManagementSystem.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="42" />
+        <state relative-caret-position="504">
+          <caret line="87" column="52" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Customers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2589">
-          <caret line="217" column="88" selection-start-line="217" selection-start-column="88" selection-end-line="217" selection-end-column="88" />
+        <state relative-caret-position="294">
+          <caret line="220" column="60" selection-start-line="220" selection-start-column="60" selection-end-line="220" selection-end-column="60" />
           <folding>
             <element signature="e#23#62#0#PHP" expanded="true" />
           </folding>

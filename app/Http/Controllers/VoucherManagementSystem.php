@@ -80,4 +80,12 @@ class VoucherManagementSystem extends Controller
         return $result=Customers::addProduct($request);
     }
 
+    public function getProductDetails(Request $request){
+        return $result=Customers::getProductData($request);
+    }
+
+    public function UpdateProductDetails(Request $request){
+        return $result=Customers::editProductDetails($request);
+    }
+
 }

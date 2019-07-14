@@ -130,6 +130,12 @@ class Customers extends Model
         return false;
     }
 
+    //If the volume of product is very high, then we may use multiple tables for product.
+    //For Future use, this is going to be a very effective way.
+    public static function getProductsTable($user_id){
+       return "products";
+    }
+
     protected static function getVoucherData($user_id,$voucher_id){
         if($user_id){
             $voucher_table=self::getUserVoucherTable($user_id);
@@ -141,9 +147,28 @@ class Customers extends Model
         }
     }
 
+    protected static function getProductData($request){
+
+        try {
+            $user_id = $request->get('user_id');
+            $product_id = $request->get('product_id');
+            if ($user_id && $product_id) {
+                $products_table = self::getProductsTable($user_id);
+                $product = DB::table($products_table)->where('product_id', $product_id)->first();
+                return self::responseObject(200, "Data fetched successfully !", $product);
+            } else {
+                return self::responseObject(300, "Required Parameters Missing !", null);
+            }
+        }
+        catch (\Exception $e){
+            return self::responseObject(400, $e->getMessage() , null);
+        }
+    }
+
     protected static function getAllCompanyProducts($user_id){
         if($user_id){
-            $products=DB::table('products')->where('user_id',$user_id)->get();
+            $products_table=self::getProductsTable($user_id);
+            $products=DB::table($products_table)->where('user_id',$user_id)->get();
             return self::responseObject(200,"Product list generated successfully !",$products);
         }
         else{
@@ -152,28 +177,127 @@ class Customers extends Model
     }
 
     protected static function editVoucherDetails($request){
-        $user_id=$request->get('user_id');
-        $voucher_id=$request->get('voucher_id');
-        $update_data=array();
-        $update_data['redemption_status']=$request->get('redemption_status');
-        $update_data['validity']=$request->get('voucher_validity');
-        if($request->get('product_linked'))
-           $update_data['product_linked']=$request->get('product_linked');
-        $update_data['enabled']=$request->get('enabled');
-        $update_data['created_on']=$request->get('created_on');
-        $update_data['redeemed_on']=$request->get('redeemed_on');
-        if($request->get('notes'))
-           $update_data['notes']=$request->get('notes');
+        try {
+            $user_id = $request->get('user_id');
+            $voucher_id = $request->get('voucher_id');
+            $update_data = array();
+            $update_data['redemption_status'] = $request->get('redemption_status');
+            $update_data['validity'] = $request->get('voucher_validity');
+            if ($request->get('product_linked'))
+                $update_data['product_linked'] = $request->get('product_linked');
+            $update_data['enabled'] = $request->get('enabled');
+            $update_data['created_on'] = $request->get('created_on');
+            $update_data['redeemed_on'] = $request->get('redeemed_on');
+            if ($request->get('notes'))
+                $update_data['notes'] = $request->get('notes');
 
-        if($user_id){
-            $voucher_table=self::getUserVoucherTable($user_id);
-            DB::table($voucher_table)->where('voucher_id',$voucher_id)->update($update_data);
-            $vouchers=DB::table($voucher_table)->get();
-            return self::responseObject(200,"Voucher id {$voucher_id} updated Successfully !", $vouchers);
+            if ($user_id) {
+                $voucher_table = self::getUserVoucherTable($user_id);
+                DB::table($voucher_table)->where('voucher_id', $voucher_id)->update($update_data);
+                $vouchers = DB::table($voucher_table)->get();
+                return self::responseObject(200, "Voucher id {$voucher_id} updated Successfully !", $vouchers);
+            } else {
+                return self::responseObject(300, "Important Parameters are missing !", null);
+            }
+        }catch (\Exception $e){
+
+            return self::responseObject(400, $e->getMessage(), null);
         }
-        else{
-            return self::responseObject(300,"Important Parameters are missing !",null);
+    }
+
+    protected static  function addProduct($request){
+        try{
+            $insert=array();
+            $user_id = $request->get('user_id');
+            $insert['user_id']=$request->get('user_id');
+            $insert['product_name']=$request->get('product_name');
+            $insert['specification']=$request->get('specification');
+            $insert['specification_options']=$request->get('specification_options');
+            $insert['price']=$request->get('price');
+            $insert['quantity']=$request->get('quantity');
+            $validation=self::validateProductDetails($request,true);
+            if($validation['result']==true) {
+                $product_table = self::getProductsTable($user_id);
+                DB::table($product_table)->insert($insert); 
+                return self::responseObject(200,"New Product Added Successfully !",array());
+            }else{
+                return self::responseObject(300,$validation['validation_message'], null);
+            }
         }
+        catch (\Exception $e){
+            return self::responseObject(300,$e->getMessage(),array());
+        }
+    }
+
+    protected static function editProductDetails($request){
+        try {
+            $user_id = $request->get('user_id');
+            $update_data = array();
+            $update_data['product_name'] = $request->get('product_name');
+            $update_data['specification'] = $request->get('specification');
+            $update_data['specification_options']=$request->get('specification_options');
+            $update_data['price']=$request->get('price');
+            $update_data['quantity']=$request->get('quantity');
+            $product_id=$request->get('product_id');
+
+            $validation=self::validateProductDetails($request);
+
+            if($validation['result']==true) {
+                $product_table = self::getProductsTable($user_id);
+                DB::table($product_table)->where('product_id', $product_id)->update($update_data);
+                $products = DB::table($product_table)->get();
+                return self::responseObject(200, "Product Details updated Successfully !", $products);
+            } else {
+                return self::responseObject(300,$validation['validation_message'], null);
+            }
+        }catch (\Exception $e){
+
+            return self::responseObject(400, $e->getMessage(), null);
+        }
+    }
+
+    private static function validateProductDetails($request,$ignore_product_id=false){
+        $validation_result=array();
+        $msg=array();
+        if($request->get('user_id')==null){
+            $msg[]="User id is missing";
+        }
+        if($request->get('product_id')==null && $ignore_product_id==false){
+            $msg[]="Product Id  is missing";
+        }
+        if($request->get('product_name')==null){
+            $msg[]="Product Name  is missing";
+        }
+        if($request->get('specification')==null){
+            $msg[]="Product Specification  is missing";
+        }
+        if($request->get('price')==null){
+            $msg[]="Price is missing";
+        }
+        if($request->get('quantity')==null){
+            $msg[]="Quantity is missing";
+        }
+        if($request->get('specification_options')==null){
+            $msg[]="Specification option is missing";
+        }
+        if($request->get('specification_options')){
+            $so=$request->get('specification_options');
+            $so_explode=explode("|",$so);
+            foreach($so_explode as $key=>$value){
+                $reverse_value=strrev($value);
+                 //This is doing our job for regular expression, i am quite week in regex, LOL ;)
+                if(strpos($value,":") > strpos($value,",") || substr_count($value,":")==0 || substr_count($value,",")==0 || substr_count($value,":") > 1 || substr_count($value,",,") || $reverse_value[0]=="," || $reverse_value[0]==":" || $value[0]==":" || $value[0]==","){
+                    $msg[]="Specifications options format not supported";
+                }
+            }
+        }
+
+        $msg=array_unique($msg);
+        $validation_result['validation_message']=implode(", ",$msg);
+        $validation_result['result']=(sizeof($msg)==0)?true:false;
+
+        return $validation_result;
+
     }
 
     protected static function getLinkedProductId($product_name,$user_id)
@@ -204,23 +328,7 @@ class Customers extends Model
         return $plan;
     }
 
-    protected static  function addProduct($request){
-        try{
-            $insert=array();
-            $insert['user_id']=$request->get('user_id');
-            $insert['product_name']=$request->get('product_name');
-            $insert['specification']=$request->get('specification');
-            $insert['specification_options']=$request->get('specification_options');
-            $insert['price']=$request->get('price');
-            $insert['quantity']=$request->get('quantity');
-            DB::table('products')->insert($insert);
 
-            return self::responseObject(200,"New Product Added Successfully !",array());
-        }
-        catch (\Exception $e){
-            return self::responseObject(300,$e->getMessage(),array());
-        }
-    }
 
     /*
      * Here, we will first check the CSV format is correct or not !

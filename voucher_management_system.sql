@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2019 at 08:05 AM
+-- Generation Time: Jul 15, 2019 at 01:43 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -49,18 +49,19 @@ CREATE TABLE `plans` (
   `plan_id` int(11) NOT NULL,
   `plan_name` varchar(100) NOT NULL,
   `plan_price` int(11) NOT NULL,
-  `duration` int(11) NOT NULL COMMENT 'Duration in days'
+  `duration` int(11) NOT NULL COMMENT 'Duration in days',
+  `coupon_limit` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `plans`
 --
 
-INSERT INTO `plans` (`plan_id`, `plan_name`, `plan_price`, `duration`) VALUES
-(1, 'Free', 0, 5),
-(2, 'One Month', 10, 30),
-(3, 'Six Months', 50, 180),
-(4, 'Twelve Months', 100, 360);
+INSERT INTO `plans` (`plan_id`, `plan_name`, `plan_price`, `duration`, `coupon_limit`) VALUES
+(1, 'Free', 0, 5, '50'),
+(2, 'One Month', 10, 30, '100'),
+(3, 'Six Months', 50, 180, '500'),
+(4, 'Twelve Months', 100, 360, '1000');
 
 -- --------------------------------------------------------
 
@@ -74,17 +75,23 @@ CREATE TABLE `products` (
   `specification` varchar(2000) NOT NULL,
   `specification_options` varchar(2000) NOT NULL,
   `price` varchar(2000) NOT NULL,
-  `user_id` int(200) NOT NULL
+  `user_id` int(200) NOT NULL,
+  `quantity` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `specification`, `specification_options`, `price`, `user_id`) VALUES
-(1, 'IPhone-X', '', '', '', 1),
-(2, 'Asus Zenfone Max Pro M2', '', '', '', 1),
-(3, 'Xiomi Note 7', '', '', '', 1);
+INSERT INTO `products` (`product_id`, `product_name`, `specification`, `specification_options`, `price`, `user_id`, `quantity`) VALUES
+(1, 'IPhone-X', 'Retina Display', 'Memory:128GB,256GB,512GB', '999.00', 1, 10),
+(2, 'Asus Zenfone Max Pro M2', '', '', '250.00', 1, 10),
+(3, 'Xiomi Note 7', '', '', '360.00', 1, 10),
+(4, 'One Plus 7 Pro', 'Flagship Killer', 'RAM:6GB,8GB,12GB', '669.00', 1, 20),
+(5, 'Xiomi K20 Pro', '', '', '360.00', 1, 30),
+(8, 'Nike SB Delta Sneakers', 'Skateboard Sneakers', 'color:white,blue,black|size:6,7,8,9,10,11,12', '200', 1, 30),
+(9, 'Redmi K20 Pro', 'Snapdragon 855', 'color:red,blue,black|RAM:4GB,6GB,8GB,12GB', '360.00', 1, 30),
+(10, 'Test', 'Test', 'Test:test,test', '12', 1, 20);
 
 -- --------------------------------------------------------
 
@@ -102,15 +109,16 @@ CREATE TABLE `users` (
   `company_name` varchar(200) NOT NULL,
   `opted_plan` int(11) NOT NULL,
   `voucher_table` varchar(100) NOT NULL,
-  `params` varchar(2000) NOT NULL
+  `params` varchar(2000) NOT NULL,
+  `currency` enum('INR','USD','GBP','EUR','AUD','CAD','SGD') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `email`, `password`, `activation`, `account_created`, `last_login`, `company_name`, `opted_plan`, `voucher_table`, `params`) VALUES
-(1, 'n.srinivasulurao@gmail.com', '93a1fcb8369359638eeefe22f0f3a544', 1, '2019-02-05 00:00:00', '2019-05-02 05:33:36', 'Flipkart India Pvt Ltd', 1, 'voucher_admin', '');
+INSERT INTO `users` (`user_id`, `email`, `password`, `activation`, `account_created`, `last_login`, `company_name`, `opted_plan`, `voucher_table`, `params`, `currency`) VALUES
+(1, 'n.srinivasulurao@gmail.com', '52009b678822e10a047f3d500fe2efb3', 1, '2019-02-05 00:00:00', '2019-07-14 21:30:04', 'Flipkart India Pvt Ltd', 1, 'voucher_admin', '', 'USD');
 
 -- --------------------------------------------------------
 
@@ -125,8 +133,8 @@ CREATE TABLE `voucher_admin` (
   `enabled` int(11) NOT NULL DEFAULT '1',
   `validity` datetime NOT NULL,
   `created_on` datetime NOT NULL,
-  `redeemed_on` datetime NOT NULL,
-  `product_linked` int(100) NOT NULL,
+  `redeemed_on` datetime DEFAULT NULL,
+  `product_linked` int(100) DEFAULT NULL,
   `notes` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -135,9 +143,11 @@ CREATE TABLE `voucher_admin` (
 --
 
 INSERT INTO `voucher_admin` (`voucher_id`, `coupon_code`, `redemption_status`, `enabled`, `validity`, `created_on`, `redeemed_on`, `product_linked`, `notes`) VALUES
-(2, 'xyzdsd', 1, 1, '2019-03-29 00:00:00', '2034-01-14 00:00:00', '2019-05-01 00:00:00', 1, 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.'),
-(3, 'kgjgjjjgkkkj', 1, 1, '2019-03-01 00:00:00', '2019-01-07 00:00:00', '2019-02-11 00:00:00', 2, 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.'),
-(4, 'jkhkk', 1, 1, '2019-03-23 00:00:00', '2019-03-19 00:00:00', '2019-04-11 11:04:09', 3, 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.');
+(2, 'xyzdsd', 1, 1, '2019-03-29 00:00:00', '2034-01-14 00:00:00', '2019-05-29 08:23:07', 1, 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.'),
+(3, 'kgjgjjjgkkkj', 1, 1, '2019-03-01 00:00:00', '2019-01-07 00:00:00', '2019-05-04 12:53:55', 2, 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.'),
+(22, 'CAOK65517', 1, 1, '2020-05-23 00:00:00', '2019-06-03 00:00:00', '2019-06-04 08:31:26', 1, 'Send this coupon code to Travis Cable'),
+(23, 'BAOK65812', 1, 1, '2020-05-29 00:00:00', '2019-06-03 00:00:00', '2019-06-04 08:31:28', NULL, ''),
+(24, 'ABOK21312', 1, 1, '2020-05-30 00:00:00', '2019-06-03 00:00:00', '2019-06-04 08:31:29', NULL, 'Send this coupon code to Catherine');
 
 --
 -- Indexes for dumped tables
@@ -194,7 +204,7 @@ ALTER TABLE `plans`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -206,7 +216,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `voucher_admin`
 --
 ALTER TABLE `voucher_admin`
-  MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `voucher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
