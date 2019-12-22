@@ -32,3 +32,5 @@ Route::post('/submit-voucher-details','VoucherManagementSystem@SubmitVoucherDeta
 Route::post('/upload-vouchers','VoucherManagementSystem@UploadVoucherList')->middleware('authenticate_request');
 Route::post('/add-new-product','VoucherManagementSystem@AddProductDetails')->middleware('authenticate_request');
 Route::post('/update-product-details','VoucherManagementSystem@UpdateProductDetails')->middleware('authenticate_request');
+Route::post('/get-user-details','VoucherManagementSystem@GetUserDetails')->middleware('authenticate_request');
+Route::post('/get-all-plans','VoucherManagementSystem@GetAllPlans')->middleware('authenticate_request');

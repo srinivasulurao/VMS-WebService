@@ -216,6 +216,15 @@ class Customers extends Model
             $insert['price']=$request->get('price');
             $insert['quantity']=$request->get('quantity');
             $validation=self::validateProductDetails($request,true);
+            $product_image=$request->file('product_image');
+
+            if($product_image){
+                $destination_path=storage_path('product_images');
+                $product_image_name=time()."_".str_replace(" ","_",$product_image->getClientOriginalName());
+                $product_image->move($destination_path,$product_image_name);
+                $insert['product_image']=$product_image_name;
+            }
+
             if($validation['result']==true) {
                 $product_table = self::getProductsTable($user_id);
                 DB::table($product_table)->insert($insert); 
@@ -239,6 +248,14 @@ class Customers extends Model
             $update_data['price']=$request->get('price');
             $update_data['quantity']=$request->get('quantity');
             $product_id=$request->get('product_id');
+            $product_image=$request->file('product_image');
+
+            if($product_image){
+                $destination_path=storage_path('product_images');
+                $product_image_name=time()."_".str_replace(" ","_",$product_image->getClientOriginalName());
+                $product_image->move($destination_path,$product_image_name);
+                $update_data['product_image']=$product_image_name; 
+            }
 
             $validation=self::validateProductDetails($request);
 
@@ -391,6 +408,29 @@ class Customers extends Model
         catch(\Exception $e){
             return self::responseObject(500, explode("(",$e->getMessage())[0],$e->getLine());
         }
+    }
+
+    public static function getUserData($request){
+
+        try{
+            $user_id=$request->get('user_id');
+            $result=DB::table('users')->where('user_id',$user_id)->first();
+            return self::responseObject(200,"User Details Loaded Successfully !",$result); //User Exists.
+
+        }
+        catch(\Exception $e){
+            return self::responseObject(403, explode("(",$e->getMessage())[0],$e->getLine());
+        }
+    }
+
+    public static function getPlanList(){
+          try{
+              $result=DB::table('plans')->get();
+              return self::responseObject(200,"Plan List Generated Successfully !", $result);
+          }
+          catch(\Exception $e){
+              return self::responseObject(403, explode("(",$e->getMessage())[0],$e->getLine());
+          }
     }
 
     //#################################################

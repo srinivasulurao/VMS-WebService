@@ -88,4 +88,12 @@ class VoucherManagementSystem extends Controller
         return $result=Customers::editProductDetails($request);
     }
 
+    public function GetUserDetails(Request $request){
+        return $result=Customers::getUserData($request);
+    }
+
+    public function GetAllPlans(Request $request){
+        return $result=Customers::getPlanList();
+    }
+
 }
