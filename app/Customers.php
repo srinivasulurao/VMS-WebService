@@ -345,6 +345,34 @@ class Customers extends Model
         return $plan;
     }
 
+    protected static function saveCompanyProfileDetails($request){
+        try{
+            //Create the field array.
+            $update=array();
+            $user_id=$request->get('user_id'); 
+            $update['email']=$request->get('company_email');
+            $update['company_name']=$request->get('company_name');
+            $update['paypal_email']=$request->get('paypal_email');
+            $update['currency']=$request->get('currency');
+            $update['opted_plan']=str_replace("plan_","",$request->get('opted_plan'));  
+
+            //check that the logo is present or not.
+            
+            $company_logo=$request->file('company_logo');
+            if($company_logo){
+                $destination_path=storage_path('company_logos');
+                $company_logo_name=time()."_".str_replace(" ","_", $company_logo->getClientOriginalName());
+                $company_logo->move($destination_path, $company_logo_name);
+                $update['company_logo']=$company_logo_name; 
+            }
+            DB::table('users')->where('user_id',$user_id)->update($update); 
+            return self::responseObject(200,"Company Profile Information Saved Successfully !",array());
+
+        }
+        catch(\Exception $e){
+            return self::responseObject(400, $e->getMessage(), null); 
+        }
+    }
 
 
     /*

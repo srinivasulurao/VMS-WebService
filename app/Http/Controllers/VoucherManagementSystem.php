@@ -96,4 +96,8 @@ class VoucherManagementSystem extends Controller
         return $result=Customers::getPlanList();
     }
 
+    public function SaveProfileDetails(Request $request){
+        return $result=Customers::saveCompanyProfileDetails($request);
+    }
+
 }

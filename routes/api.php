@@ -21,6 +21,8 @@ use Illuminate\Http\Request;
 //For Login and Registration webservices.
 Route::post('/do-login','VoucherManagementSystem@authenticateCredentials')->middleware('authenticate_request');
 Route::post('/change-password','VoucherManagementSystem@changePassword')->middleware('authenticate_request');
+
+//for All Internal profile transactions, middleware will be used for handling all malicious web request.
 Route::post('/get-user-vouchers','VoucherManagementSystem@getUserVouchers')->middleware('authenticate_request');
 Route::post('/disable-enable-voucher','VoucherManagementSystem@disableEnableVoucher')->middleware('authenticate_request');
 Route::post('/change-redemption_status','VoucherManagementSystem@changeRedemptionStatus')->middleware('authenticate_request');
@@ -34,3 +36,5 @@ Route::post('/add-new-product','VoucherManagementSystem@AddProductDetails')->mid
 Route::post('/update-product-details','VoucherManagementSystem@UpdateProductDetails')->middleware('authenticate_request');
 Route::post('/get-user-details','VoucherManagementSystem@GetUserDetails')->middleware('authenticate_request');
 Route::post('/get-all-plans','VoucherManagementSystem@GetAllPlans')->middleware('authenticate_request');
+Route::post('/save-profile-details','VoucherManagementSystem@SaveProfileDetails')->middleware('authenticate_request'); 
+Route::post('/register-company','VoucherManagementSytem@DoRegistration')->middleware('authenticate_request'); 
