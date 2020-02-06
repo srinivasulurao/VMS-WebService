@@ -14,6 +14,8 @@ class Customers extends Model
 
     public $primaryKey="user_id";
 
+    const current_voucher_table="voucher_admin"; //This is a plan, if in future the table becomes full, to be used only during registration process.
+
     //###################################################################
     //All Data Providers
     //###################################################################
@@ -459,6 +461,97 @@ class Customers extends Model
           catch(\Exception $e){
               return self::responseObject(403, explode("(",$e->getMessage())[0],$e->getLine());
           }
+    }
+
+    public static function CheckDuplicateEmailAddress($request){
+
+        try{
+            $email=$request->get('email');
+            $count=DB::table('users')->where('email',$email)->count();
+            if($count){
+                return self::responseObject(200,"Account Exist!",array('total_count'=>$count));
+            } 
+            else{
+                return self::responseObject(200,"Duplicate Account",array('total_count'=>$count)); 
+            }
+        }
+        catch(\Exception $e){
+            return self::responseObject(403, explode("(",$e->getMessage())[0],$e->getLine());
+        }
+    }
+
+    public static function getPlanEndDate($plan_id){
+        $plan=DB::table('plans')->where('plan_id',$plan_id)->first();
+        $end_date=($plan->duration*3600*24)+time();
+        return date("Y-m-d H:i:s",$end_date);
+    }
+
+    public static function SaveRegistrationAndCompletePayment($request){
+        try{
+
+            //First Save Registration Details
+            $insert=array();
+            $insert['email']=$request->get('email'); 
+            $insert['company_name']=$request->get('company_name'); 
+            $insert['phone_no']=$request->get('phone_no'); 
+            $insert['password']=md5($request->get('password')); 
+            $insert['activation']=1;
+            $insert['opted_plan']=$request->get('opted_plan');
+            $insert['voucher_table']=self::current_voucher_table;
+            $insert['currency']=$request->get('currency');
+            $insert['account_created']=date("Y-m-d H:i:s",time());
+            $insert['last_login']=  date("Y-m-d H:i:s",time());
+            $params=array();
+            $params[0]['plan_slno']=0;
+            $params[0]['plan_id']=$request->get('opted_plan');
+            $params[0]['end_date']=self::getPlanEndDate($request->get('opted_plan')); 
+            $insert['params']=json_encode($params);   
+            
+            $company_logo=$request->file('company_logo'); //Store the company logo.
+            if($company_logo){
+                $destination_path=storage_path('company_logos');
+                $image_name=time()."_".str_replace(" ","_",$company_logo->getClientOriginalName());
+                $company_logo->move($destination_path,$image_name);
+                $insert['company_logo']=$image_name;
+            }
+
+            $last_insert_id=DB::table('users')->insertGetId($insert); 
+
+            //Save the Payment Transaction Details, as of now we using paypal, in future we may integrate some more payment gateways like stripe etc.
+            if($last_insert_id){
+                $payment_transaction=array();
+                $payment_transaction['user_id']=$last_insert_id; 
+                $payment_transaction['transaction_id']=$request->get('transaction_id'); //This is the payment gateway transaction id.
+                $payment_transaction['plan_id']=$request->get('opted_plan'); 
+                $payment_transaction['transaction_details']=$request->get('transaction_details'); 
+                $payment_transaction['created_on']=date('Y-m-d H:i:s',time()); 
+                $payment_transaction['status']=$request->get('status'); 
+
+                $payment_transaction_success=DB::table('payment_transactions')->insertGetId($payment_transaction);
+            }
+
+
+            if($last_insert_id && $payment_transaction_success){
+                //Ideally we should send a mail to the user, who registered here.
+                self::sendRegistrationSuccessMail($request->get('email'));
+                return self::responseObject(200,"Registration Successful !",array('paypal_transaction_id'=>$request->get('transaction_id'),'user_id'=>$last_insert_id,'VMS_payment_transaction_id'=>$payment_transaction_success)); // User has been inserted with payment transaction details.
+            }
+            
+        }
+        catch(\Exception $e){
+            return self::responseObject(403,$e->getmessage()." @ ".$e->getLine(). ", Please contact the administrator to resolve this issue.",null); 
+        }
+    }
+
+    public static function sendRegistrationSuccessMail($customer_email){
+
+        // Mail::send('mail',array('register.mail'=>'Voucher Management System'), function($message){
+        //     $message->to($customer_email)
+        //             ->subject('Registration Successful !')
+        //             ->from('admin@vms.com'); 
+        // });
+        //we do something very soon.
+        return 1; 
     }
 
     //#################################################

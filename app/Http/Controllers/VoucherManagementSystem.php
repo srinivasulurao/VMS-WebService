@@ -100,4 +100,12 @@ class VoucherManagementSystem extends Controller
         return $result=Customers::saveCompanyProfileDetails($request);
     }
 
+    public function CheckDuplicateAccount(Request $request){
+        return $result=Customers::CheckDuplicateEmailAddress($request);  
+    }
+
+    public function DoRegistration(Request $request){
+        return $result=Customers::SaveRegistrationAndCompletePayment($request); 
+    }
+
 }
