@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+*,button{
+  font-family: 'Lato', sans-serif;
+}
+
+#playground{
+  background: white; 
+  //border-radius: 10px;
+  box-shadow: 0 0 4px grey;
+  width: 90%;
+  border: 1px solid lightgrey;
+}
+
+body{
+background:#123456;
+font-size:14px; 
+}
+
+.form-group{
+  width:100%;
+}
+
+footer{
+  text-align:center;
+  margin-top: 20px;
+  clear: both;
+  color:seagreen;
+}
+h4{
+  color:#123456;
+  border-bottom:1px solid lightgrey;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+}
+
+label{
+  color:#123456 !important;
+}
+.voucher-input-form{
+    padding: 30px;
+    margin: auto;
+    background:white;
+}
+
+::placeholder {
+  color: seagreen;
+}
+
+#submit_vouchers{
+  float:right;
+}
+
+.error_text{
+  color:red;
+  font-size:15px; 
+  height:15px;
+  display: inline-block; 
+}
+
+
+#loading{
+  display: none;
+}
+
+.billing_address_form,.shipping_address_form,.shopping-cart{
+  padding:30px;
+}
+
+.has-error{
+  border:1px solid red !important;
+}
+
+.col-md-4,.col-md-8,.col-md-2, .col-md-3,.col-md-5,.col-md-6,.col-md-7,.col-md-9,.col-md-10{
+  display:inline-block;
+}
+
+.product_image{
+  width:122px;
+  height:142px;
+}
+
+.product_options_label,.product_options{
+  display: inline-block;
+  clear:both;
+  text-transform: uppercase; 
+}
+
+
+.product_options{
+  width:120px;
+  font-size:10px;
+  text-transform: uppercase !important;
+}
+
+.product_options_label{
+  min-width: 50px !important;
+}
+
+.product_options option{
+  font-size:14px !important; 
+}
+
+.product_option_box{
+  min-height: 90px;
+} 
